@@ -66,6 +66,7 @@ has_many :purchases
 ### Association
 
 belongs_to :user 
+has_one :purchases
 
 
 
