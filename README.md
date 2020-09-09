@@ -49,15 +49,16 @@ has_many :products
 
 ## products テーブル
 
-| Column             | Type     | Options     |
-| ------------------ | -------- | ----------- |
-| name               | string   | null: false |
-| explanation        | text     | null: false |
-| category_id        | integer  | null: false |
-| condition_id       | integer  | null: false |
-| prefecture_id      | integer  | null: false |
-| sipping_days_id    | integer  | null: false |
-| price              | integer  | null: false |
+| Column             | Type       | Options                        |
+| ------------------ | --------   | -------------------------------|                    
+| user               | references | null: false, foreign_key: true |
+| name               | string     | null: false                    |
+| explanation        | text       | null: false                    |
+| category_id        | integer    | null: false                    |
+| condition_id       | integer    | null: false                    |
+| prefecture_id      | integer    | null: false                    |
+| sipping_days_id    | integer    | null: false                    |
+| price              | integer    | null: false                    |
 
 
 ### Association
