@@ -52,7 +52,7 @@ has_many :products
 | Column             | Type     | Options     |
 | ------------------ | -------- | ----------- |
 | name               | string   | null: false |
-| explanation        | string   | null: false |
+| explanation        | text     | null: false |
 | images_id          | integer  | null: false |
 | category_id        | integer  | null: false |
 | condition_id       | integer  | null: false |
