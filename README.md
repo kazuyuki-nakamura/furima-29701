@@ -51,13 +51,15 @@ has_many :products
 
 | Column             | Type     | Options     |
 | ------------------ | -------- | ----------- |
+| name               | string   | null: false |
 | explanation        | string   | null: false |
 | images_id          | integer  | null: false |
 | category_id        | integer  | null: false |
-| shipping_burden_id | integer  | null: false |
+| condition_id       | integer  | null: false |
 | prefecture_id      | integer  | null: false |
 | sipping_days_id    | integer  | null: false |
 | price              | integer  | null: false |
+
 
 ### Association
 
