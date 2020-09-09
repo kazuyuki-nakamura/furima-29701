@@ -93,7 +93,7 @@ has_one : sipping_address
 | Column        | Type     | Options                        |
 | ------------- | -------- | ------------------------------ |
 | post_code     | string   | null: false                    |
-| prefecture_id | integer  | null: false, foreign_key: true |
+| prefecture_id | integer  | null: false |
 | city_name     | string   | null: false                    |
 | building_name | string   | null: false                    |
 | phone_number  | string   | null: false                    |
