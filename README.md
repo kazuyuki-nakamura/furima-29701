@@ -85,6 +85,8 @@ has_one :purchases
 ### Association
 
 has_one : sipping_address
+belongs_to :products
+belongs_to :user
 
 
 
