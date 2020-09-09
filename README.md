@@ -25,7 +25,7 @@ Things you may want to cover:
 
 # テーブル設計
 
-## user テーブル
+## users テーブル
 
 | Column            Type   | Options     | 
 | --------------- | ------ | ----------- |
@@ -41,6 +41,7 @@ Things you may want to cover:
 ### Association
 
 has_many :products
+has_many :purchases
 
 
 
