@@ -53,7 +53,6 @@ has_many :products
 | ------------------ | -------- | ----------- |
 | name               | string   | null: false |
 | explanation        | text     | null: false |
-| images_id          | integer  | null: false |
 | category_id        | integer  | null: false |
 | condition_id       | integer  | null: false |
 | prefecture_id      | integer  | null: false |
