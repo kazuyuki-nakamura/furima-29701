@@ -22,3 +22,81 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# テーブル設計
+
+## user テーブル
+
+| Column            Type   | Options     | 
+| --------------- | ------ | ----------- |
+| nickname        | string | null: false |
+| email           | string | null: false | 
+| password        | string | null: false |
+| first_name      | string | null: false |
+| last_name       | string | null: false |
+| first_name_kana | string | null: false |
+| last_name_kana  | string | null: false |
+| birth_day       | string | null: false |
+
+### Association
+
+has_many :products
+
+
+
+
+
+
+## products テーブル
+
+| Column             | Type     | Options     |
+| ------------------ | -------- | ----------- |
+| explanation        | string   | null: false |
+| images_id          | integer  | null: false |
+| category_id        | integer  | null: false |
+| shipping_burden_id | integer  | null: false |
+| prefecture_id      | integer  | null: false |
+| sipping_days_id    | integer  | null: false |
+| price              | integer  | null: false |
+
+### Association
+
+belongs_to :user 
+
+
+
+
+
+
+
+
+## purchases テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| product | references | null: false, foreign_key: true |
+| user    | references | null: false, foreign_key: true |
+
+### Association
+
+has_one : sipping_address
+
+
+
+
+
+
+## sipping_address テーブル
+
+| Column        | Type     | Options                        |
+| ------------- | -------- | ------------------------------ |
+| post_code     | string   | null: false                    |
+| prefecture_id | integer  | null: false, foreign_key: true |
+| city_name     | string   | null: false                    |
+| building_name | string   | null: false                    |
+| phone_number  | string   | null: false                    |
+| purchases     | string   | null: false                    |
+
+### Association
+
+belongs_to :user
