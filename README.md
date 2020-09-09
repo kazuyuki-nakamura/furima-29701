@@ -56,6 +56,7 @@ has_many :products
 | explanation        | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | condition_id       | integer    | null: false                    |
+| sipping_cost_id    | integer    | null: false                    |
 | prefecture_id      | integer    | null: false                    |
 | sipping_days_id    | integer    | null: false                    |
 | price              | integer    | null: false                    |
