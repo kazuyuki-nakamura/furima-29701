@@ -4,19 +4,23 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
- 
- validates :password, format: { with: /\A(?=.&#042;?[a-z])(?=.&#042;?\d)[a-z\d]+\z/i} 
- validates :password, length: { minimum: 6 }
- validates :email, format { with: VALID_EMAIL_REGEX }
- validates :email, format { /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/ }
- validates :first_name, format { input1 }
- validates :last_name, format { input1 }
- validates :first_name_kana, format { input2 }
- validates :last_name_kana, format { input2 }
+  with_options presence: true, format: { with:/\A[ぁ-んァ-ン一-龥]/+\z } do
+    validates :first_name
+    validates :last_name 
+  end
 
+  with_options presence: true, format: { with:/\p{katakana}//\A[ァ-ヶー－]+\z/ } do
+    validates :first_name_kana
+    validates :last_name_kana
+  end
 
-  input1 = /\A[ぁ-んァ-ン一-龥]/+\z
-  input2 = /\p{katakana}//\A[ァ-ヶー－]+\z/
+    PASSWORD_REGEX = /\A(?=.&#042;?[a-z])(?=.&#042;?\d)[a-z\d]+\z/i 
+    validates_format_of :password, with: PASSWORD_REGEX
+    validates :password, length: { minimum: 6 }
+    VALID_EMAIL_REGEX = /^([a-zA-Z0-9])+([a-zA-Z0-9\._-])*@([a-zA-Z0-9_-])+([a-zA-Z0-9\._-]+)+$/
+    validates_format_of :emal, with: VALID_EMAIL_REGEX
+    
 
+  
          
 end
